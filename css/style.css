@@ -1,70 +1,68 @@
 *{
-    margin: 0%;
-}
-.topnav .icon{
-    display:none;
-}
-.topnav{
-    width: 100%;
-    height: 80px;
-    justify-content: center;
-    align-items: center;
-}
-nav{
+    margin: 0;
+  } 
+  nav{
     display: flex;
-    padding: 20px 10%;
-    justify-content: space-between;
+    height: 40px;
+    width: 100%;
+    background-color: white;
     align-items: center;
-}
-.headerLogo{
-    cursor: pointer;
-}
-.topnav ul li{
+    justify-content:space-around;
+    padding: 0 50px 0 100px;
+    flex-wrap: wrap;
+  }
+  nav .headerLogo{
+    font-weight: 600;
+  }
+  nav ul{
+    justify-content:left;
+    display: flex;
+    flex-wrap: wrap;
     list-style: none;
-    display: inline-block;
-    padding: 0px 9px;
-    position: relative;
-}
-.topnav ul li {
-    text-decoration: none;
-    color: #000000;
-    font-family: "Noto Sans JP";
-    font-size: 15px;
-    font-weight: 500;
-    
-}
-.topnav a{
-    
-    display: inline-block;
-    list-style: none;
+  }
+  nav ul li{
+    margin: 0 5px;
+  }
+  nav ul li a{
+    font-family:"noto sans jp";
+    color: black;
     text-decoration: none;
     font-size: 18px;
-    font-weight: 400;
-    font-family:"Noto Sans jp";
+    font-weight: 500;
+    padding: 0px 5px;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+  }
+  nav ul li a:hover{
+    color:Black;
+    background:White;
+  }
+  nav button{
+      width: 100pxx;
+      height: 30px;
+      border-radius: 21px;
+      padding: 0px 9px;
+      border-color: transparent;
+      background-color: #b72e33;
+      background-image: linear-gradient(45deg, #ff7d00 0%, #ff544f 100%);
+      color: #ffffffff;
+      font-family: "Noto Sans jp";
+      font-size: 15px;
+      font-weight: 400;
+      letter-spacing: normal;
+      letter-spacing: 0.91px;
+      cursor: pointer;
+  }
+  nav .menu-btn i{
     color: black;
-    font-style: normal;
-    letter-spacing: normal;
-    line-height: 43px;
-    letter-spacing: 1.05px;
-
-}
-.topnav button{
-    width: 165px;
-    height: 50px;
-    border-radius: 21px;
-    padding: 0px 9px;
-    border-color: transparent;
-    background-color: #b72e33;
-    background-image: linear-gradient(45deg, #ff7d00 0%, #ff544f 100%);
-    color: #ffffffff;
-    font-family: "Noto Sans jp";
-    font-size: 15px;
-    font-weight: 400;
-    letter-spacing: normal;
-    letter-spacing: 0.91px;
+    font-size: 22px;
     cursor: pointer;
-    
-}
+    display: none;
+  }
+  input[type="checkbox"]{
+    display: none;
+  }
 #BH{
     padding: 0%;
     width: 100%;
@@ -425,14 +423,9 @@ td{
 }
 
 @media (max-width: 1366px){
-    .topnav ul li a{
-        font-size: 15px;
-        letter-spacing: 1px;       
-    }
+    
     .topnav .headerLogo{
         margin-left: 60%;
-        width: 110px;
-        height: 34px;
     }
     .topnav button{
         width: 110px;
@@ -464,11 +457,6 @@ td{
         position: relative;
         width: 80%;
         left: 10%;
-    }
-    
-    .container img {
-        width: 250px;
-        height: 200px;
     }
     .container .first, .second, .third{
         font-size: 20px;
@@ -613,14 +601,61 @@ td{
     }
 }
 @media (max-width:768px){
-    .topnav.icon{
-        display:inline;
+    nav .menu-btn i{
+        display: block;
+      }
+    #click:checked ~ .menu-btn i:before{
+        content: "\f00d";
+      }    
+      nav ul {
+        
+        position: fixed;
+        top: 70px;
+        left: -200%;
+        background: white;
+        height: 100vh;
+        width: 50%;
+        text-align:left;
+        display: block;
+        transition: all 0.3s ease;
+      }
+      #click:checked ~ ul{
+        left: 0;
+      }
+      nav ul li{
+        width: 100%;
+      }
+      nav ul li a{
+        width: 100%;
+        margin-left: -100%;
+        display: block;
+        font-size: 20px;
+        transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      }
+      #click:checked ~ ul li a{
+        margin-left: 0px;
+      }
+      nav ul li a:hover{
+        background: none;
+        color: black;
+      }
+      nav button{
+        width:50%;
+      }
+    .content{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      z-index: -1;
+      width: 100%;
+      padding: 0 20px;
+      color: #1b1b1b;
     }
-    .topnav ul li a{
-        display: none;      
-    }
-    .container .second, .container .third{
-        display: none;
+    .content div{
+      font-size: 40px;
+      font-weight: 700;
     }
     #Work .prev{
         padding-top: 30%;
@@ -814,33 +849,61 @@ td{
       
 }
 @media (max-width:428px){
-    .topnav .icon{
-        display:inline;
-    }
-    .topnav .headerLogo{
-        margin-left: 40px;
-    }
-    .topnav{
-        justify-content: center;
-    }
-    .topnav button{
-        margin-right: 12%;
-        margin-top: 1px;
+    nav .menu-btn i{
+        display: block;
+      }
+      #click:checked ~ .menu-btn i:before{
+        content: "\f00d";
+      }    
+      nav ul{
+        position: fixed;
+        top: 70px;
+        left: -200%;
+        background: white;
+        height: 100vh;
+        width: 50%;
+        text-align:left;
+        display: block;
+        transition: all 0.3s ease;
+      }
+      #click:checked ~ ul{
+        left: 0;
+      }
+      nav ul li{
         width: 100%;
-        height: 36px;
-        border-radius: 21px;
-        padding: 0px 19px;
-        border-color: transparent;
-        background-color: #b72e33;
-        background-image: linear-gradient(45deg, #ff7d00 0%, #ff544f 100%);
-        color: #ffffffff;
-        font-family: "Noto Sans jp";
-        font-size: 15px;
-        font-weight: 400;
-        letter-spacing: normal;
-        letter-spacing: 0.91px;
-        cursor: pointer;
-        
+        margin: 10px;
+      }
+      nav ul li a{
+        width: 100%;
+        margin-left: -100%;
+        display: block;
+        font-size: 20px;
+        transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      }
+      #click:checked ~ ul li a{
+        margin-left: 0px;
+      }
+      nav ul li a:hover{
+        background: none;
+        color: black;
+      }
+      nav button{
+        width:50%;
+      }
+    .content{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      z-index: -1;
+      width: 100%;
+      padding: 0 20px;
+      color: #1b1b1b;
+    }
+    .content div{
+      font-size: 40px;
+      font-weight: 700;
     }
     #BH{
         text-align: center;
@@ -994,76 +1057,64 @@ td{
     .topnav .headerLogo{
         width: 10px;
     }
-}
-@media(max-width:390px){
-    .topnav .icon{
-        display:inline
+   
+    nav .menu-btn i{
+        display: block;
+      }
+      #click:checked ~ .menu-btn i:before{
+        content: "\f00d";
+      }    
+      nav ul{
+        position: fixed;
+        top: 80px;
+        left: -200%;
+        background: white;
+        height: 100vh;
+        width: 50%;
+        text-align:left;
+        display: block;
+        transition: all 0.3s ease;
+      }
+      #click:checked ~ ul{
+        left: 0;
+      }
+      nav ul li{
+        width: 100%;
+        margin: 10px;
+      }
+      nav ul li a{
+        width: 100%;
+        margin-left: -100%;
+        display: block;
+        font-size: 20px;
+        transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      }
+      #click:checked ~ ul li a{
+        margin-left: 0px;
+      }
+      nav ul li a:hover{
+        background: none;
+        color: black;
+      }
+      nav button{
+        width:50%;
+      }
+    .content{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      z-index: -1;
+      width: 100%;
+      padding: 0 20px;
+      color: #1b1b1b;
     }
-    .topnav .headerLogo{
-        margin-left: 50px;
-    }
-    .topnav button{
-        display: none;
-    }
-    #BH{
-        width:100%;
-        height:60%;
-    }
-    #BH .logo1{
-        position:relative ;
-        width:270px;
-    }
-    #BH .detail h1{
-        margin-top: -70%;
-        margin-left: 10%;
-    }
-    #BH .detail p{
-        margin-top:-10% ;
-        margin-left: 12%;
+    .content div{
+      font-size: 40px;
+      font-weight: 700;
     }
 
-    #BH .detail button{
-        margin-left: 12%;
-        margin-top: 20%;
-        margin-bottom: 25%;
-        font-size: 12px;
-        width:100% ;
-        height: 40px;
-    }
-    #Work{
-        height:800px
-    }
-    #Work h1{
-        font-size: 30px ;
-    }
-    #Work .details h3{
-        font-size: 20px;
-        font-weight:600;
-    }
-    #Work .details p{
-        font-size: 20px;
-        font-weight:600;
-    }
-    .slick-dots {
-        bottom: -125px;
-    }
-    .slick-next:before {
-        display:none;
-    }
-    #About .twitter{
-        margin-top: 30%;
-    }
-    #Company table{
-
-        margin-left: 2%;
-            margin-top:55px;
-            border-collapse: collapse;
-            position: relative;
-            width: 90%;
-    }
-    th,td{
-        padding: 2%;
-    }
 }
 @media(max-width:2560px) and (min-width:1920px){
        .topnav .headerLogo img{
